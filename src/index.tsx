@@ -22,15 +22,12 @@ declare function column_correct(sudoku: number[][], column_no: number): boolean;
 declare function row_correct(sudoku: number[][], row_no: number): boolean;
 
 const isValid = (grid: number[][], rowIndex: number, columnIndex: number) => {
-  const cellCorrect = cell_correct(grid, rowIndex, columnIndex);
-  const blockCorrect = block_correct(
-    grid,
-    Math.floor(rowIndex / 3) * 3,
-    Math.floor(columnIndex / 3) * 3
+  return (
+    cell_correct(grid, rowIndex, columnIndex) &&
+    block_correct(grid, rowIndex, columnIndex) &&
+    row_correct(grid, rowIndex) &&
+    column_correct(grid, columnIndex)
   );
-  const rowCorrect = row_correct(grid, rowIndex);
-  const columnCorrect = column_correct(grid, columnIndex);
-  return cellCorrect && rowCorrect && columnCorrect && blockCorrect;
 };
 
 const initialState = range(9).map(() => range(9).map(() => 0));
