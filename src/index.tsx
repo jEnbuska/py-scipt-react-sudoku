@@ -36,7 +36,6 @@ const isValid = (grid: number[][], rowIndex: number, columnIndex: number) => {
 const initialState = range(9).map(() => range(9).map(() => 0));
 
 const Sudoku = () => {
-  console.log("RENDER SUDOKU");
   const [sudoku, setSudoku] = useState(initialState);
   const handleChange =
     (rowIndex: number, columnIndex: number) =>
@@ -75,10 +74,8 @@ const Sudoku = () => {
 };
 const waitUntilSudokuPyReady = async (): Promise<void> => {
   if ("cell_correct" in window) {
-    console.log("done");
     return;
   }
-  console.log("wait");
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(waitUntilSudokuPyReady());
