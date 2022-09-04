@@ -8,6 +8,12 @@
   background: var(--main-color);
 }
 
+@media only screen and (max-width: 670px) {
+  .cell {
+    font-size: 1rem;
+  }
+}
+
 .cell:focus-within {
   padding: var(--gap-s);
 }
