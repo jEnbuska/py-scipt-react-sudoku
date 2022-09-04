@@ -1,0 +1,40 @@
+.cell {
+  display: inline-flex;
+  overflow: hidden;
+  text-align: center;
+  height: var(--cell-size);
+  font-size: 2rem;
+  padding: var(--gap-xs);
+  background: var(--main-color);
+}
+
+.cell:focus-within {
+  padding: var(--gap-s);
+}
+
+.cellInvalid {
+  background: rgb(246, 0, 0);
+}
+
+
+.cellInput {
+  overflow: hidden;
+  inset: 0;
+  text-align: center;
+}
+
+.cellInput:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

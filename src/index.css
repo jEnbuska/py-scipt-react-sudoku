@@ -1,30 +1,9 @@
 #root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --main-color: rgba(20, 21, 66, 0.84);
+  --gap-xs: 2px;
+  --gap-s: 4px;
+  --gap-m: 8px;
+  --gap-l: 16px;
   height: 100vh;
+  background: linear-gradient(rgba(109, 213, 250, 0.31), rgba(86, 86, 173, 0.13));
 }
-
-.sudokuCell {
-  font-weight: bold;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  border: 2px solid black;
-  box-sizing: content-box;
-  text-align: right
-}
-
-.sudokuCellInvalid {
-  background: rgba(248, 41, 41, 0.55);
-}
-
-.sudokuCell:nth-child(3n):not(:last-child) {
-  border-right-width: 8px;
-}
-
-.sudokuRow:nth-child(3n):not(:last-child) > .sudokuCell {
-  border-bottom-width: 8px;
-}
-
-

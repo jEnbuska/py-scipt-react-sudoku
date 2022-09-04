@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--gap-m);
+  padding: var(--gap-s);
+  max-width: 650px;
+  --cell-size: calc((650px - var(--gap-s) * 8 - var(--gap-m) * 2) / 9);
+}
+
+@media only screen and (max-width: 670px) {
+  .grid {
+    max-width: unset;
+    --cell-size: calc((100vw - var(--gap-s) * 8 - var(--gap-m) * 2) / 9);
+  }
+}

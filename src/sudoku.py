@@ -50,3 +50,5 @@ def cell_correct(sudoku: list, row_no: int, column_no: int):
 
 
 window.cell_correct = cell_correct
+
+window.python_sudoku_loaded = True
