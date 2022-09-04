@@ -1,8 +1,8 @@
 import classnames from "classnames";
-import React, { ChangeEvent, useContext } from "react";
+import React, { KeyboardEventHandler, useContext } from "react";
 import { SudokuContext } from "../../context";
 import { CellPosition, CellValue } from "../../types";
-import { asCellValue } from "../../utils";
+import { isCellValue } from "../../utils";
 import "./styles.css";
 
 type OwnProps = CellPosition & {
@@ -10,9 +10,11 @@ type OwnProps = CellPosition & {
 };
 const Cell = ({ value, row, col }: OwnProps) => {
   const { setCellValue, validateCell } = useContext(SudokuContext);
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = asCellValue(parseInt(e.target.value, 10));
-    setCellValue({ row, col }, newValue);
+  const onKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
+    const nextValue = e.key === "Backspace" ? 0 : parseInt(e.key, 10);
+    if (isCellValue(nextValue)) {
+      setCellValue({ row, col }, nextValue);
+    }
   };
   return (
     <div
@@ -22,8 +24,8 @@ const Cell = ({ value, row, col }: OwnProps) => {
     >
       <input
         type="number"
-        value={`${value}`}
-        onChange={onChange}
+        value={value ? `${value}` : ""}
+        onKeyDown={onKeyDown}
         className="cellInput"
       />
     </div>

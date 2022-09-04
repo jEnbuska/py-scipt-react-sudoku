@@ -58,9 +58,10 @@ export const asCoordinateIndex = (index: number): CoordinateIndex => {
   throw new Error("Invalid coordinate index");
 };
 
-const isCellValue = (value: number): value is CellValue => {
+export const isCellValue = (value: number): value is CellValue => {
   return value >= 0 && value <= 9;
 };
+
 export const asCellValue = (value: number): CellValue => {
   if (isCellValue(value)) {
     return value;
