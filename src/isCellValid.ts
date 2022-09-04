@@ -23,7 +23,7 @@ const isCellValid = (grid: number[][], position: CellPosition) => {
     cell_correct(grid, row, col) &&
     block_correct(grid, row, col) &&
     row_correct(grid, row) &&
-    column_correct(grid, row)
+    column_correct(grid, col)
   );
 };
 export default isCellValid;
