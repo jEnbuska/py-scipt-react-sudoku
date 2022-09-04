@@ -4,8 +4,11 @@
   text-align: center;
   height: var(--cell-size);
   font-size: 2rem;
-  padding: var(--gap-xs);
-  background: var(--main-color);
+  border: var(--gap-xs) solid var(--main-color);
+}
+
+.cell:focus-within {
+  border-width: var(--gap-s);
 }
 
 @media only screen and (max-width: 670px) {
@@ -14,12 +17,9 @@
   }
 }
 
-.cell:focus-within {
-  padding: var(--gap-s);
-}
 
 .cellInvalid {
-  background: rgb(246, 0, 0);
+  border-color: rgb(246, 0, 0);
 }
 
 
@@ -27,6 +27,7 @@
   overflow: hidden;
   inset: 0;
   text-align: center;
+  background: rgba(255, 255, 255, 0.46);
 }
 
 .cellInput:focus {
