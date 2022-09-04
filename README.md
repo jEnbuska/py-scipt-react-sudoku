@@ -1,3 +1,7 @@
 ## Sudoku app
 
-# A simple sudoku app implemented in most complicated way possible
+A simple Sudoku app, implemented in most complicated way possible
+
+- Sudoku validation implemented using py-script in the browser
+- Playing around with Typescript by typing number ranges, and fixed lenght arrays
+- Implementing the React Sudoku grid by simples dumbest way possible, while making things extraordinarily complicated at the same time
