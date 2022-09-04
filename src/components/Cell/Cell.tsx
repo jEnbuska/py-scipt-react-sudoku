@@ -23,10 +23,10 @@ const Cell = ({ value, row, col }: OwnProps) => {
       })}
     >
       <input
-        type="number"
         value={value ? `${value}` : ""}
         onKeyDown={onKeyDown}
         className="cellInput"
+        pattern="[0-9]*"
       />
     </div>
   );
