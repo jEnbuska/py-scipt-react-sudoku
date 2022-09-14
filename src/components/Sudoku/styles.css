@@ -1,12 +1,17 @@
 .sudoku {
   color: var(--main-color);
   width: 100vw;
-  height: 100vh;
   padding: var(--gap-m);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@supports (height: 100svh) {
+  .sudoku {
+    height: 100svh;
+  }
 }
 
 @media only screen and (max-width: 670px) {
