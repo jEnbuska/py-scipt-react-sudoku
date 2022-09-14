@@ -1,6 +1,7 @@
 .sudoku {
   color: var(--main-color);
   width: 100vw;
+  height: 100vh;
   padding: var(--gap-m);
   overflow: hidden;
   display: flex;
